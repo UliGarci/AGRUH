@@ -26,15 +26,16 @@ const gethabitacion = async (req, res) => {
 
 const addhabitacion = async (req, res) => {
     try {
-        const { room, price, description, image } = req.body;
-        if(room==undefined || price==undefined || description==undefined || image==undefined){
-            res.status(400).json({message:'Mala peticiom, por favor llena todos los campos'});
+        const { room, price, description, image, quantity} = req.body;
+        if(room==undefined || price==undefined || description==undefined || image==undefined || quantity==undefined){
+            res.status(400).json({message:'Mala peticion, por favor llena todos los campos'});
         }
         const newRoom = {
             room,
             price,
             description,
-            image
+            image,
+            quantity
         }
         const connection = await getConnection();
         const result = await connection.query('INSERT INTO rooms SET ?', [newRoom]);
@@ -60,16 +61,17 @@ const deletehabitacion = async (req, res) => {
 const updatehabitacion = async (req, res) => {
     try {
         const {id} = req.params;
-        const { room, price, description, image } = req.body;
-        if(id==undefined || room==undefined || price==undefined || description==undefined || image==undefined){
-            res.status(400).json({message:'Mala peticiom, por favor llena todos los campos'});
+        const { room, price, description, image, quantity} = req.body;
+        if(id==undefined || room==undefined || price==undefined || description==undefined || image==undefined || quantity==undefined){
+            res.status(400).json({message:'Mala peticion, por favor llena todos los campos'});
         }
         const newRoom = {
             id,
             room,
             price,
             description,
-            image
+            image,
+            quantity
         }
 
         const connection = await getConnection();
