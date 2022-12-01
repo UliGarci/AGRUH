@@ -206,19 +206,20 @@ CREATE TABLE `rooms` (
   `room` varchar(50) NOT NULL,
   `price` double NOT NULL,
   `description` varchar(200) NOT NULL,
-  `image` varchar(500) NOT NULL
+  `image` varchar(500) NOT NULL,
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `room`, `price`, `description`, `image`) VALUES
-(1, 'Sencilla', 380.32, '1 cama, 1 television', 'https://www.stanzahotel.com/wp-content/uploads/2020/07/2020_stanza_hotel_habitacion_sencilla_01.jpg'),
-(2, 'junior-suite', 430.38, '2 camas, 1 television, vista al mar', 'http://www.hoteldelacasona.com/wp-content/uploads/2018/10/hab2-5.jpg'),
-(3, 'Suite', 580.42, '2 camas, 1 television, sala de estar, balcon', 'https://www.hotsson.com/HSAdmin/habitacion/images/recortes/Cc_IMGhabitacion_SuitePresidencial_5597.jpg'),
-(4, 'Presidencial', 864.99, '2 camas, aire acondicionado, 2 televisiones, terraza', 'https://www.stanzahotel.com/wp-content/uploads/2020/07/2018_stanza_051-1.jpg'),
-(5, 'Fast', 500, '1 camas, aire acondicionado, 1 television', 'https://www.stanzahotel.com/wp-content/uploads/2020/07/2018_stanza_051-1.jpg');
+INSERT INTO `rooms` (`id`, `room`, `price`, `description`, `image`,`quantity`) VALUES
+(1, 'Sencilla', 380.32, '1 cama, 1 television', 'https://www.stanzahotel.com/wp-content/uploads/2020/07/2020_stanza_hotel_habitacion_sencilla_01.jpg',5),
+(2, 'junior-suite', 430.38, '2 camas, 1 television, vista al mar', 'http://www.hoteldelacasona.com/wp-content/uploads/2018/10/hab2-5.jpg',3),
+(3, 'Suite', 580.42, '2 camas, 1 television, sala de estar, balcon', 'https://www.hotsson.com/HSAdmin/habitacion/images/recortes/Cc_IMGhabitacion_SuitePresidencial_5597.jpg',5),
+(4, 'Presidencial', 864.99, '2 camas, aire acondicionado, 2 televisiones, terraza', 'https://www.stanzahotel.com/wp-content/uploads/2020/07/2018_stanza_051-1.jpg',3),
+(5, 'Fast', 500, '1 camas, aire acondicionado, 1 television', 'https://www.stanzahotel.com/wp-content/uploads/2020/07/2018_stanza_051-1.jpg',8);
 
 -- --------------------------------------------------------
 
@@ -322,17 +323,18 @@ CREATE TABLE `users` (
   `card` varchar(16) NOT NULL,
   `idmembership` int(11) NOT NULL,
   `idrole` int(11) NOT NULL,
-  `spent` double NOT NULL
+  `spent` double NOT NULL,
+  `status` tiny NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `phone`, `card`, `idmembership`, `idrole`, `spent`) VALUES
-(2, 'Andres', 'Mena Padilla', 'andres_mena@hotmail.com', 'andres123', '7773271160', '4741751754442929', 1, 2, 160),
-(3, 'Sebastian', 'Quintero Martinez', 'sebastian_quintero@hotmail.com', 'sebastian123', '7771234567', '4741751754444949', 2, 2, 212),
-(4, 'Josue', 'Vidal Peralta', 'josue_vidal@hotmail.com', 'josue123', '', '1234567890123456', 2, 2, 1064.99);
+INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `phone`, `card`, `idmembership`, `idrole`, `spent`,`status`) VALUES
+(2, 'Andres', 'Mena Padilla', 'andres_mena@hotmail.com', 'andres123', '7773271160', '4741751754442929', 1, 2, 160,1),
+(3, 'Sebastian', 'Quintero Martinez', 'sebastian_quintero@hotmail.com', 'sebastian123', '7771234567', '4741751754444949', 2, 2, 212,1),
+(4, 'Josue', 'Vidal Peralta', 'josue_vidal@hotmail.com', 'josue123', '', '1234567890123456', 2, 2, 1064.99,0);
 
 --
 -- Índices para tablas volcadas
