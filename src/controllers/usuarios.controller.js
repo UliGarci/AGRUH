@@ -25,8 +25,8 @@ const getusuario = async (req, res) => {
 
 const addusuario = async (req, res) => {
     try {
-        const {name,surname,email,password,phone,card,idmembership,idrole,spent} = req.body;
-        if(name==undefined || surname==undefined || email==undefined || password==undefined || card==undefined || idmembership==undefined || idrole==undefined || spent==undefined){
+        const {name,surname,email,password,phone,card,idmembership,idrole,spent,status} = req.body;
+        if(name==undefined || surname==undefined || email==undefined || password==undefined || card==undefined || idmembership==undefined || idrole==undefined || spent==undefined || status==undefined){
             res.status(400).json({message:'Mala peticion, por favor llena todos los campos'});
         }
         const newUser = {
@@ -38,7 +38,8 @@ const addusuario = async (req, res) => {
             card,
             idmembership,
             idrole,
-            spent
+            spent,
+            status
         }
         const connection = await getConnection();
         const result = await connection.query('INSERT INTO users SET ?', [newUser]);
@@ -64,9 +65,9 @@ const deleteusuario = async (req, res) => {
 const updateusuario = async (req, res) => {
     try {
         const {id} = req.params;
-        const {name,surname,email,password,phone,card,idmembership,idrole,spent} = req.body;
-        if(id==undefined || name==undefined || surname==undefined || email==undefined || password==undefined || card==undefined || idmembership==undefined || idrole==undefined || spent==undefined){
-            res.status(400).json({message:'Mala peticiom, por favor llena todos los campos'});
+        const {name,surname,email,password,phone,card,idmembership,idrole,spent,status} = req.body;
+        if(id==undefined || name==undefined || surname==undefined || email==undefined || password==undefined || card==undefined || idmembership==undefined || idrole==undefined || spent==undefined || status==undefined){
+            res.status(400).json({message:'Mala peticion, por favor llena todos los campos'});
         }
 
         const newUser = {
@@ -78,7 +79,8 @@ const updateusuario = async (req, res) => {
             card,
             idmembership,
             idrole,
-            spent
+            spent,
+            status
         }
 
         const connection = await getConnection();
