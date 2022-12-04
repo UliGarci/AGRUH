@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style/style.css">
+    <title>Riu Hotel</title>
+</head>
+<body style="background-color: aliceblue;">
+    <style>
+        #navbar-custom {
+            background-image: url("images/navbar.png");
+            background-size: 90rem;
+        }
+        
+    </style>
+    <!-- Navigation -->
+    <header class="header" id="navbar-custom">
+      <div class="logo">
+          <img src="images/Logo.png" alt="Logo de la marca">
+      </div>
+      <nav>          
+      </nav>
+      <a class="btn" href="#"><img src="images/LogIn.png" alt="" width="150px"></a>
+  </header>
+
+
+  <!--CARRUSEL DE IMAGENES-->
+    <!-- Archivos de bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Para el ancho y alto de las imagenes. Modificalo a gusto =)  */
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 100%;
+            height: 500px;
+            margin: auto;
+        }
+        /* Para los margenes del contendor de las fotos. Podes cambiarle el ancho a gusto tambien! */
+        .carousel-control {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <br>
+  <div id="carrusel" class="carousel slide" data-ride="carousel">
+
+    <!-- Opcional, bullets abajo para saltar directamente a una foto (si los pones tiene q haber 1 por foto) -->
+    <ol class="carousel-indicators">
+      <li data-target="#carrusel" data-slide-to="0" class="active"></li>
+      <li data-target="#carrusel" data-slide-to="1"></li>
+      <li data-target="#carrusel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Contenedor de las fotos -->
+    <div class="carousel-inner" role="listbox">
+
+      <!-- Foto 1 -->
+      <div class="item active">
+        <img src="images/img1.jpeg">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="font-size: 30px;   color: aliceblue; font-weight: bolder;">Hotel en Acapulco</h5>
+          <p>Hotel con vista al oceano, vistas bellas y recamaras comodas 5 estrellas.</p>
+        </div>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="item">
+        <img src="images/img5.webp">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="font-size: 30px;   color: aliceblue; font-weight: bolder;">Hotel en Acapulco</h5>
+          <p>Hotel con vista al oceano, vistas bellas y recamaras comodas 5 estrellas.</p>
+        </div>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="item">
+        <img src="images/img4.jpeg">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="font-size: 30px;   color: aliceblue; font-weight: bolder;">Hotel en Acapulco</h5>
+          <p>Hotel con vista al oceano, vistas bellas y recamaras comodas 5 estrellas.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controles para pasar las fotos -->
+    <a class="left carousel-control" href="#carrusel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carrusel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<style type="text/css">
+  .contenedor {
+    text-align: center;
+  }
+  .centrado {
+    display: inline-block;
+  }
+  </style>
+  <div class="contenedor">
+      <div class="centrado">
+      </div>
+      <a class="my-button" href="#">Reservar habitación<span></span></a>
+  </div>
+
+</body>
+</html>
